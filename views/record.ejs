@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Records</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<div class="container">
+		<table class="table">
+			<% if(record.length != 0) { %>
+				<% var tableheadings = Object.keys(record[0]) %>
+				<thead>
+					<tr class="info">
+						<% for (var i = 0 ; i < tableheadings.length ; i++ ) {%>
+							<th><%=tableheadings[i]%></th>
+						<%}%>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (var j = 0 ; j < record.length ;j++) {%>
+						<tr class="success">
+							<td><%= record[j].Name%></td>
+							<td><%= record[j].City%></td>
+							<td><%= record[j].Country%></td>
+						</tr>
+					<% } %>
+				</tbody>
+			<% } %>
+		</table>
+	</div>
+	</body>
+</html>
